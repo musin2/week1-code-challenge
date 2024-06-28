@@ -1,6 +1,7 @@
 # week1-code-challenge
 
 <b>The buttons on index.html run the code for each challenge question.
+
 Challenge 1: Student Grade Generator (Toy Problem)
 
 Prompt user to enter student marks
