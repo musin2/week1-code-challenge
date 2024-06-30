@@ -13,4 +13,4 @@ Give demerit points for every 5km/h above the speed limit(70) using if statement
 
 Chellenge 3: Net Salary Calculator
 
-Calculates the Net Salary of an individual by calculating tax, NHIF and NSSF deductions.
+Calculates the Net Salary of an individual by calculating PAYE tax, NHIF and NSSF deductions and subtracting them from the gross salary.
