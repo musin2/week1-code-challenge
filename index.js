@@ -2,6 +2,10 @@
 function studentGrade(){
     let grade = prompt("Enter Student Marks (0-100)");
 
+if(grade < 0 || grade > 100){           //input validation
+    alert("Enter a valid score")
+} else{
+
     if(grade>79){
         alert("Grade: A");
     } else if(grade>=60 && grade<=79){
@@ -14,11 +18,16 @@ function studentGrade(){
         alert("Grade: E");
     } else { alert("Wrong input");}
 }
+}
 // Challenge 2: Speed Detector
 function detectSpeed(){
-    let carSpeed = 80;
+    let carSpeed = prompt("Enter Speed of the vehicle");
     let speedLimit = 70;
     let demeritP = 0;
+
+if(carSpeed <= 0 || carSpeed >765){             //input validation
+       alert("Enter a valid vehicle speed");
+} else{
 
     if(carSpeed<=speedLimit){   //check if the car speed is below the speed limit
         alert("OK");
@@ -31,14 +40,19 @@ function detectSpeed(){
         alert("License suspended"); 
     }
 }
+}
 
 // Chellenge 3: Net Salary Calculator
 function getNetSalary(){
     let netSalary;
-    let grossSalary = 15000;
+    let grossSalary = prompt("Enter basic salary");
     let paye;
     let nhif;
     let nssf;
+    if(grossSalary <= 0){                   //input validation
+        alert("Enter a valid number");
+    }else{
+ 
     //calculate PAYE
     if(grossSalary <= 24000){
         paye = grossSalary * 0.1;
@@ -105,4 +119,6 @@ function getNetSalary(){
 
     netSalary = grossSalary -paye - nhif - nssf;
     alert(`Net Salary: ${netSalary}, PAYE = ${paye}, NHIF deduction = ${nhif}, NSSF deduction = ${nssf}, Basic Salary (Gross Salary) = ${grossSalary}`);
+       
+    }
 }
