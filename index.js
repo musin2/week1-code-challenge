@@ -44,14 +44,16 @@ if(carSpeed <= 0 || carSpeed >765){             //input validation
 
 // Chellenge 3: Net Salary Calculator
 function getNetSalary(){
+
     let netSalary;
     let grossSalary = prompt("Enter basic salary");
     let paye;
     let nhif;
     let nssf;
-    if(grossSalary <= 0){                   //input validation
-        alert("Enter a valid number");
-    }else{
+
+if(grossSalary <= 0){                   //input validation
+    alert("Enter a valid number");
+}else{
  
     //calculate PAYE
     if(grossSalary <= 24000){
@@ -66,6 +68,7 @@ function getNetSalary(){
         paye = grossSalary * 0.35;
     }
 
+    //calculate nhif
     if(grossSalary <= 5999){
         nhif = 150;
     } else if(grossSalary <= 7999){
@@ -102,21 +105,23 @@ function getNetSalary(){
         nhif = 1700;
     }
 
-    if(grossSalary <= 7000){                //tier 1 contribution (6% rate)
+    //Calculate nssf
+    if(grossSalary <= 7000){                   //tier 1 contribution (6% rate)
         nssf = grossSalary * 0.06;
     } else if(grossSalary > 7000 && grossSalary <= 36000){
         //tier 2 contribution
-        let t1 = 7000 * 0.06;                   //tier 1 contribution (limited to 7,000 shillings)
-        let t2deductable = grossSalary - 7000;         //Use basic salary to calculate deductable amount for teir 2 contribution
+        let t1 = 7000 * 0.06;                  //tier 1 contribution (limited to 7,000 shillings)
+        let t2deductable = grossSalary - 7000; //Use basic salary to calculate deductable amount for teir 2 contribution
         t2 = t2deductable * 0.06;
         nssf = t1 + t2;
     } else if(grossSalary > 36000){            //Limit of nssf deductions = 36000 shillings
         let t1 = 7000 * 0.06;
-        let t2deductable = 36000 - 7000;        //Alternative: 6% of 36000 shillings
+        let t2deductable = 36000 - 7000;       //Alternative: 6% of 36000 shillings
         let t2 = t2deductable * 0.06;
         nssf = t1 + t2;    
     }
 
+    //Calculate net salary and display taxes and deductions
     netSalary = grossSalary -paye - nhif - nssf;
     alert(`Net Salary: ${netSalary}, PAYE = ${paye}, NHIF deduction = ${nhif}, NSSF deduction = ${nssf}, Basic Salary (Gross Salary) = ${grossSalary}`);
        
