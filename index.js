@@ -24,10 +24,15 @@ function detectSpeed(){
     let carSpeed = prompt("Enter Speed of the vehicle");
     let speedLimit = 70;
     let demeritP = 0;
+    console.log(typeof(carSpeed));
 
-if(carSpeed <= 0 || carSpeed >765){             //input validation
+if(carSpeed <= 0 || carSpeed > 765){             //input validation
        alert("Enter a valid vehicle speed");
-} else{
+} 
+else if(isNaN(carSpeed)){
+        alert("Enter a valid number")
+} 
+else{
 
     if(carSpeed<=speedLimit){   //check if the car speed is below the speed limit
         alert("OK");
@@ -56,7 +61,9 @@ if(grossSalary <= 0){                   //input validation
 }else{
  
     //calculate PAYE
-    if(grossSalary <= 24000){
+    if(grossSalary <= 20000){
+        paye = 0;
+    }else if(grossSalary <= 24000){
         paye = grossSalary * 0.1;
     } else if(grossSalary <= 32333){
         paye = grossSalary * 0.25;
